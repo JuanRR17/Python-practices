@@ -75,6 +75,32 @@ def best_payed_employee(employees):
     return ordered[-1]["nombre"]
 
 print(best_payed_employee(empleados))
+print(" ")
 
-#Mostrar todos los empleados de un departamento.
-#Contar empleados por departamento.
+print("Mostrar todos los empleados de un departamento:")
+def show_employees(employees):
+    for emp in employees:
+        print(emp["nombre"])
+
+show_employees(empleados)
+print(" ")
+
+print("Contar empleados por departamento:")
+def employees_per_dept(employees):
+    #Create list of Departments
+    depts = []
+    for e in employees:
+        if e["departamento"] not in depts:
+            depts.append(e["departamento"])
+
+    #Add number of employees per Deparment
+    count = {}
+    for employee in employees:
+        dept = employee["departamento"]
+        if dept not in count:
+            count[dept] = 1
+        else:
+            count[dept] += 1
+    return count
+    
+print(employees_per_dept(empleados))
