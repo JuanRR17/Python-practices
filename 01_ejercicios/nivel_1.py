@@ -1,3 +1,4 @@
+print("=== NIVEL 1 ===")
 # Ejercicio 1: Inventario de herramientas
 print("**** EJERCICIO 1: Inventario de herramientas ****")
 herramientas = [
@@ -96,8 +97,10 @@ def employees_per_dept(employees):
     #Add number of employees per Deparment
     count = {}
     for employee in employees:
+        #dept = {CAD}
         dept = employee["departamento"]
         if dept not in count:
+            #{CAD : 1}
             count[dept] = 1
         else:
             count[dept] += 1
