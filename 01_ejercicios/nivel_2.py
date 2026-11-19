@@ -96,3 +96,11 @@ def count_by_priority(incidents):
 print(count_by_priority(incidencias))
 
 print("Resolver una incidencia buscando por ID:") 
+def resolve(id, incidents):
+    for inc in incidents:
+        solved = inc
+        if inc["id"] == id:
+            inc["resuelta"] = True
+            return solved
+
+print(resolve(2,incidencias))
